@@ -1,0 +1,13 @@
+D:\Apps\vsrepos\QualityTest\bin\Debug\netcoreapp3.1\QualityTest.exe
+D:\Apps\vsrepos\QualityTest\bin\Debug\netcoreapp3.1\QualityTest.deps.json
+D:\Apps\vsrepos\QualityTest\bin\Debug\netcoreapp3.1\QualityTest.runtimeconfig.json
+D:\Apps\vsrepos\QualityTest\bin\Debug\netcoreapp3.1\QualityTest.runtimeconfig.dev.json
+D:\Apps\vsrepos\QualityTest\bin\Debug\netcoreapp3.1\QualityTest.dll
+D:\Apps\vsrepos\QualityTest\bin\Debug\netcoreapp3.1\QualityTest.pdb
+D:\Apps\vsrepos\QualityTest\obj\Debug\netcoreapp3.1\QualityTest.csprojAssemblyReference.cache
+D:\Apps\vsrepos\QualityTest\obj\Debug\netcoreapp3.1\QualityTest.AssemblyInfoInputs.cache
+D:\Apps\vsrepos\QualityTest\obj\Debug\netcoreapp3.1\QualityTest.AssemblyInfo.cs
+D:\Apps\vsrepos\QualityTest\obj\Debug\netcoreapp3.1\QualityTest.csproj.CoreCompileInputs.cache
+D:\Apps\vsrepos\QualityTest\obj\Debug\netcoreapp3.1\QualityTest.dll
+D:\Apps\vsrepos\QualityTest\obj\Debug\netcoreapp3.1\QualityTest.pdb
+D:\Apps\vsrepos\QualityTest\obj\Debug\netcoreapp3.1\QualityTest.genruntimeconfig.cache
