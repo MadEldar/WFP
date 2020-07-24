@@ -30,8 +30,6 @@ namespace QualityTest.Models
             Status = status;
         }
 
-        public Student() { }
-
         public bool isNewStudent()
         {
             return DateTime.Now.AddMonths(-2) > CreatedAt;

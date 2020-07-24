@@ -23,7 +23,7 @@ namespace QualityTest
             { 
                 GenerateMenu();
                 var choice = Console.ReadLine();
-                while (Int32.TryParse(choice, out int result))
+                while (!Int32.TryParse(choice, out int result))
                 {
                     Console.WriteLine("Not a choice. Re-enter:");
                     choice = Console.ReadLine();
@@ -37,6 +37,15 @@ namespace QualityTest
                         studentController.PrintListStudent();
                         break;
                     case 3:
+                        Console.WriteLine("\nEnter student's roll number:");
+                        studentController.ChangeStudentStatus(Console.ReadLine());
+                        break;
+                    case 4:
+                        Console.WriteLine("\nEnter student's roll number:");
+                        studentController.CheckNewStudent(Console.ReadLine());
+                        break;
+                    case 5:
+                        Console.WriteLine("\nProgram exited successfully.");
                         return;
                     default:
                         Console.WriteLine("Not a choice");
@@ -47,10 +56,10 @@ namespace QualityTest
 
         private static void GenerateMenu()
         {
-            Console.WriteLine(("").PadRight(100, '-'));
+            Console.WriteLine("\n\n" + "".PadRight(100, '-'));
             Console.WriteLine("{0, 58}", "Student menu");
-            Console.WriteLine(("").PadRight(100, '-'));
-            Console.WriteLine("\n01. Insert new student.\n02. Student list.\n03. Exit");
+            Console.WriteLine("".PadRight(100, '-'));
+            Console.WriteLine("\n01. Insert new student.\n02. Student list.\n03. Change student's status.\n04. Check if student is new.\n05. Exit.");
         }
     }
 }

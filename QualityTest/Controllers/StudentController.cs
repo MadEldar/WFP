@@ -54,5 +54,49 @@ namespace QualityTest.Controllers
             students.Add(st);
             return st;
         }
+        public void CheckNewStudent(string rollNumber)
+        {
+            foreach (Student st in students)
+            {
+                if (st.RollNumber == rollNumber)
+                {
+                    Console.WriteLine("Student of roll number {0} is {1}a new student.", rollNumber, st.isNewStudent() ? "not " : "");
+                    return;
+                }
+            }
+            Console.WriteLine("Cannot find student in the student list");
+        }
+        public bool ChangeStudentStatus(string rollNumber)
+        {
+            foreach (Student st in students)
+            {
+                if (st.RollNumber == rollNumber)
+                {
+                    Console.WriteLine("Roll number {0, -10} Full name: {1, -25} Current status: {2}", st.RollNumber, st.FullName, st.Status);
+                    Console.WriteLine("Change this student's status to {0} (y/n)?",
+                        st.isDeactive() ? Student.StudentStatus.Active : Student.StudentStatus.Deactive
+                    );
+                    string choice = Console.ReadLine();
+                    while (choice != "y" && choice != "n")
+                    {
+                        Console.WriteLine("Incorrect choice. Please choose again:");
+                        choice = Console.ReadLine();
+                    }
+                    if (choice == "y")
+                    {
+                        st.Status = st.isDeactive() ? Student.StudentStatus.Active : Student.StudentStatus.Deactive;
+                        Console.WriteLine("Changed student's status successfully.");
+                        return true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Student's status was not changed.");
+                        return false;
+                    }
+                }
+            }
+            Console.WriteLine("Cannot find student in the student list");
+            return false;
+        }
     }
 }
