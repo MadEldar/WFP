@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="MemberRegister.MainPage"
+    x:Class="MemberRegister.Register"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MemberRegister"
@@ -54,8 +54,7 @@
                 <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" Text="*Please pick your birthday." x:Name="BirthdayLabel"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 25, 100, 0">
-                <Button Content="Save" Margin="0, 0, 60, 0" Click="Register_member"/>
-                <Button Content="Reset"/>
+                <Button Content="Save" Click="Register_member"/>
             </StackPanel>
         </StackPanel>
     </Grid>

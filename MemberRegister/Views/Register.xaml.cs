@@ -15,9 +15,9 @@ namespace MemberRegister
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class Register : Page
     {
-        public MainPage()
+        public Register()
         {
             this.InitializeComponent();
         }
@@ -37,7 +37,6 @@ namespace MemberRegister
             if (Confirm.Password != Password.Password) return;
             if (!Birthday.Date.HasValue)
             {
-                Debug.WriteLine("Beep boop I'm a robot");
                 BirthdayLabel.Opacity = 1;
                 return;
             }
@@ -55,8 +54,10 @@ namespace MemberRegister
             );
 
             var contentJson = JsonConvert.SerializeObject(m);
-            Debug.WriteLine(contentJson);
-            var response = new HttpClient().PostAsync("https://2-dot-backup-server-002.appspot.com/_api/v2/members", new StringContent(contentJson, Encoding.UTF8, "application/json")).Result;
+            var response = new HttpClient().PostAsync(
+                "https://2-dot-backup-server-002.appspot.com/_api/v2/members",
+                new StringContent(contentJson, Encoding.UTF8, "application/json")
+            ).Result;
             Debug.WriteLine(response.Content.ReadAsStringAsync().Result);
         }
 

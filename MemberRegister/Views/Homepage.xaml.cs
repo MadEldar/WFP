@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -20,11 +21,27 @@ namespace MemberRegister.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Navigation : Page
+    public sealed partial class Homepage : Page
     {
-        public Navigation()
+        public Homepage()
         {
             this.InitializeComponent();
+        }
+
+        private void SignIn_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Debug.WriteLine("Hello");
+            ContentFrame.Navigate(typeof(SignIn));
+        }
+
+        private void SignUp_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            ContentFrame.Navigate(typeof(Register));
+        }
+
+        private void CreateSong_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            ContentFrame.Navigate(typeof(CreateSong));
         }
     }
 }
