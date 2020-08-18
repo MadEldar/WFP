@@ -11,24 +11,24 @@
     <Grid>
         <StackPanel Width="650" VerticalAlignment="Center" x:Name="Form">
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <TextBox HorizontalAlignment="Center" Width="450" Margin="0, 0, 50, 0" x:Name="Name"  PlaceholderText="Song name:" KeyUp="Check_empty"/>
-                <TextBlock HorizontalAlignment="Right" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" Text="*Field cannot be empty"/>
+                <TextBox Style="{StaticResource Input}" x:Name="Name"  PlaceholderText="Song name:" KeyUp="Check_empty"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" Text="*Field cannot be empty"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <TextBox HorizontalAlignment="Left" Width="450" Margin="0, 0, 50, 0" x:Name="Singer" PlaceholderText="Artist:" KeyUp="Check_empty"/>
-                <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" Text="*Field cannot be empty"/>
+                <TextBox Style="{StaticResource Input}" x:Name="Singer" PlaceholderText="Artist:" KeyUp="Check_empty"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" Text="*Field cannot be empty"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <TextBox HorizontalAlignment="Left" Width="450" Margin="0, 0, 50, 0" x:Name="Author" PlaceholderText="Author:" KeyUp="Check_empty"/>
-                <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" Text="*Field cannot be empty"/>
+                <TextBox Style="{StaticResource Input}" x:Name="Author" PlaceholderText="Author:" KeyUp="Check_empty"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" Text="*Field cannot be empty"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <TextBox HorizontalAlignment="Left" Width="450" Margin="0, 0, 50, 0" x:Name="Thumbnail" PlaceholderText="Thumbnail:" KeyUp="Check_empty"/>
-                <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" Text="*Field cannot be empty"/>
+                <TextBox Style="{StaticResource Input}" x:Name="Thumbnail" PlaceholderText="Thumbnail:" KeyUp="Check_empty"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" Text="*Field cannot be empty"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <TextBox HorizontalAlignment="Left" Width="450" Margin="0, 0, 50, 0" x:Name="Link" PlaceholderText="Song link:" KeyUp="Check_empty"/>
-                <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" Text="*Field cannot be empty"/>
+                <TextBox Style="{StaticResource Input}" x:Name="Link" PlaceholderText="Song link:" KeyUp="Check_empty"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" Text="*Field cannot be empty"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 25, 100, 0">
                 <Button Content="Save" Click="Create_Song"/>

@@ -1,10 +1,12 @@
-﻿using MemberRegister.Entities;
+﻿using MyServices.Entities;
+using MyServices.Services;
 using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
+using Windows.Media.Capture;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -17,9 +19,12 @@ namespace MemberRegister
     /// </summary>
     public sealed partial class Register : Page
     {
+        private static StorageFile photo = null;
+        public MemberViewModel MemberBind { get; set; }
         public Register()
         {
             this.InitializeComponent();
+            MemberBind = new MemberViewModel();
         }
 
         private void Register_member(object sender, RoutedEventArgs e)
@@ -41,6 +46,10 @@ namespace MemberRegister
                 return;
             }
 
+            MemberBind._MemberViewModel.birthday = Birthday.Date.Value.ToString("yyyy-MM-dd");
+            MemberBind._MemberViewModel.gender = Int32.Parse(Gender.SelectedIndex.ToString());
+            Debug.WriteLine(JsonConvert.SerializeObject(MemberBind._MemberViewModel));
+
             Member m = new Member(
                 FirstName.Text,
                 LastName.Text,
@@ -53,12 +62,7 @@ namespace MemberRegister
                 Birthday.Date.Value.ToString("yyyy-MM-dd")
             );
 
-            var contentJson = JsonConvert.SerializeObject(m);
-            var response = new HttpClient().PostAsync(
-                "https://2-dot-backup-server-002.appspot.com/_api/v2/members",
-                new StringContent(contentJson, Encoding.UTF8, "application/json")
-            ).Result;
-            Debug.WriteLine(response.Content.ReadAsStringAsync().Result);
+            //MusicILike.SignUp(m);
         }
 
         private void Check_empty(object sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
@@ -89,6 +93,17 @@ namespace MemberRegister
             {
                 ConfirmLabel.Opacity = 0;
             }
+        }
+
+        private async void Take_Photo(object sender, RoutedEventArgs e)
+        {
+            var upload_token = MusicILike.GetUploadToken();
+            CameraCaptureUI cameraCaptureUI = new CameraCaptureUI();
+            photo = await cameraCaptureUI.CaptureFileAsync(CameraCaptureUIMode.Photo);
+            if (photo == null) return;
+            Stream fileStream = await photo.OpenStreamForReadAsync();
+            var imageService = new MyServices.Services.ImageService();
+            var imageUrl = await imageService.HttpUploadFile(await upload_token, fileStream, "myFile", "image/png");
         }
     }
 }

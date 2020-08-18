@@ -11,28 +11,28 @@
     <Grid>
         <StackPanel Width="650" VerticalAlignment="Center" x:Name="Form">
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <TextBox HorizontalAlignment="Center" Width="450" Margin="0, 0, 50, 0" x:Name="FirstName"  PlaceholderText="First name:" KeyUp="Check_empty"/>
-                <TextBlock HorizontalAlignment="Right" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" Text="*Field cannot be empty"/>
+                <TextBox Style="{StaticResource Input}" x:Name="FirstName"  PlaceholderText="First name:" KeyUp="Check_empty" Text="{x:Bind MemberBind._MemberViewModel.firstName}"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" Text="*Field cannot be empty"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <TextBox HorizontalAlignment="Left" Width="450" Margin="0, 0, 50, 0" x:Name="LastName" PlaceholderText="Last name:" KeyUp="Check_empty"/>
-                <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" Text="*Field cannot be empty"/>
+                <TextBox Style="{StaticResource Input}" x:Name="LastName" PlaceholderText="Last name:" KeyUp="Check_empty" Text="{x:Bind MemberBind._MemberViewModel.lastName}"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" Text="*Field cannot be empty"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <TextBox HorizontalAlignment="Left" Width="450" Margin="0, 0, 50, 0" x:Name="Email" PlaceholderText="Email:" KeyUp="Check_empty"/>
-                <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" Text="*Field cannot be empty"/>
+                <TextBox Style="{StaticResource Input}" x:Name="Email" PlaceholderText="Email:" KeyUp="Check_empty" Text="{x:Bind MemberBind._MemberViewModel.email}"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" Text="*Field cannot be empty"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <PasswordBox HorizontalAlignment="Left" Width="450" Margin="0, 0, 50, 0" x:Name="Password" PlaceholderText="Password:"/>
-                <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" Text="*Field cannot be empty"/>
+                <PasswordBox Style="{StaticResource Input}" x:Name="Password" PlaceholderText="Password:" Password="{x:Bind MemberBind._MemberViewModel.password}"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" Text="*Field cannot be empty"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <PasswordBox HorizontalAlignment="Left" Width="450" Margin="0, 0, 50, 0" x:Name="Confirm" PlaceholderText="Confirm password:" PasswordChanged="Confirm_PasswordChanged"/>
-                <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" x:Name="ConfirmLabel"/>
+                <PasswordBox Style="{StaticResource Input}" x:Name="Confirm" PlaceholderText="Confirm password:" PasswordChanged="Confirm_PasswordChanged"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" x:Name="ConfirmLabel"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <TextBox HorizontalAlignment="Left" Width="450" Margin="0, 0, 50, 0" x:Name="Address" PlaceholderText="Address:" KeyUp="Check_empty"/>
-                <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" Text="*Field cannot be empty"/>
+                <TextBox Style="{StaticResource Input}" x:Name="Address" PlaceholderText="Address:" KeyUp="Check_empty" Text="{x:Bind MemberBind._MemberViewModel.address}"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" Text="*Field cannot be empty"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0, 25, 0, 0">
                 <TextBlock Margin="0, 0, 50, 0" Height="25">Gender:</TextBlock>
@@ -42,16 +42,17 @@
                 </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <TextBox HorizontalAlignment="Left" Width="450" Margin="0, 0, 50, 0" x:Name="Phone" PlaceholderText="Phone:" KeyUp="Check_empty"/>
-                <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" Text="*Field cannot be empty"/>
+                <TextBox Style="{StaticResource Input}" x:Name="Phone" PlaceholderText="Phone:" KeyUp="Check_empty" Text="{x:Bind MemberBind._MemberViewModel.phone}"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" Text="*Field cannot be empty"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <TextBox HorizontalAlignment="Left" Width="450" Margin="0, 0, 50, 0" x:Name="Avatar" PlaceholderText="Avatar link:" KeyUp="Check_empty"/>
-                <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" Text="*Field cannot be empty"/>
+                <TextBox HorizontalAlignment="Left" Width="300" Margin="0, 0, 50, 0" x:Name="Avatar" PlaceholderText="Avatar link:" KeyUp="Check_empty" Text="{x:Bind MemberBind._MemberViewModel.avatar}"/>
+                <Button HorizontalAlignment="Left" Width="100" Margin="0 0 50 0" Click="Take_Photo">Take photo</Button>
+                <TextBlock Style="{StaticResource ErrorBlock}" Text="*Field cannot be empty"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <CalendarDatePicker HorizontalAlignment="Left" Width="450" Margin="0, 0, 50, 0" x:Name="Birthday" PlaceholderText="Birthday:" DateChanged="Birthday_DateChanged"/>
-                <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" Foreground="Red" Opacity="0" Text="*Please pick your birthday." x:Name="BirthdayLabel"/>
+                <CalendarDatePicker Style="{StaticResource Input}" x:Name="Birthday" PlaceholderText="Birthday:" DateChanged="Birthday_DateChanged"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" Text="*Please pick your birthday." x:Name="BirthdayLabel"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 25, 100, 0">
                 <Button Content="Save" Click="Register_member"/>

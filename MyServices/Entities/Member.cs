@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MemberRegister.Entities
+﻿
+namespace MyServices.Entities
 {
-    class Member
+    public class Member
     {
         public string firstName { get; set; }
         public string lastName { get; set; }
@@ -17,6 +12,10 @@ namespace MemberRegister.Entities
         public int gender { get; set; }
         public string email { get; set; }
         public string birthday { get; set; }
+
+        public Member()
+        {
+        }
 
         public Member(string firstName, string lastName, string password, string address, string phone, string avatar, int gender, string email, string birthday)
         {
@@ -30,5 +29,11 @@ namespace MemberRegister.Entities
             this.email = email;
             this.birthday = birthday;
         }
+    }
+
+    public class MemberViewModel
+    {
+        private Member _member = new Member();
+        public Member _MemberViewModel { get => _member; }
     }
 }

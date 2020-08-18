@@ -1,0 +1,103 @@
+﻿<Page
+    x:Class="MemberRegister.Views.Profile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MemberRegister.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel Orientation="Horizontal" Padding="10">
+            <StackPanel Padding="50" Margin="50" VerticalAlignment="Center">
+                <Image Width="250" x:Name="Avatar"/>
+            </StackPanel>
+            <Grid Width="800" Height="175" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="0" Text="First name:"/>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="1" x:Name="FirstName"/>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="0" Text="Last name:"/>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="1" x:Name="LastName"/>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="0" Text="Email:"/>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="1" x:Name="Email"/>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="0" Text="Phone:"/>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="1" x:Name="Phone"/>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="0" Text="Gender:"/>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="1" x:Name="Gender"/>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="0" Text="Birthday:"/>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="1" x:Name="Birthday"/>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="0" Text="Address:"/>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="1" x:Name="Address"/>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="0" Text="Introduction:"/>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="1" x:Name="Introduction"/>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="0" Text="Created at:"/>
+                    <TextBlock TextAlignment="Left" Grid.Row="0" Grid.Column="1" x:Name="CreatedAt"/>
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

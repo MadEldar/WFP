@@ -1,6 +1,6 @@
-﻿namespace MemberRegister.Views
+﻿namespace MyServices.Entities
 {
-    internal class ResponseResult
+    public class ResponseResult
     {
         public string token { get; set; }
         public string secret { get; set; }

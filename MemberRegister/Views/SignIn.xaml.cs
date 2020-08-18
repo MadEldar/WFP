@@ -1,7 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using MyServices.Services;
+using Newtonsoft.Json;
 using System.Diagnostics;
-using System.Net.Http;
-using System.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -19,7 +18,7 @@ namespace MemberRegister.Views
             this.InitializeComponent();
         }
 
-        private void Sign_In(object sender, RoutedEventArgs e)
+        private async void Sign_In(object sender, RoutedEventArgs e)
         {
             if (Email.Text == "")
             {
@@ -32,17 +31,25 @@ namespace MemberRegister.Views
                 return;
             }
 
-            var content = JsonConvert.SerializeObject(new {
+            var response = await MusicILike.SignIn(JsonConvert.SerializeObject(new
+            {
                 email = Email.Text,
                 password = Password.Password
-            });
+            }));
 
-            var responseString = new HttpClient().PostAsync(
-                "https://2-dot-backup-server-002.appspot.com/_api/v2/members/authentication",
-                new StringContent(content, Encoding.UTF8, "application/json")
-            ).Result.Content.ReadAsStringAsync().Result;
-            var result = JsonConvert.DeserializeObject<ResponseResult>(responseString);
-            Debug.WriteLine(result.token);
+            if (response.status == 1)
+            {
+                Debug.WriteLine("Logged in successfully");
+            }
+            else
+            {
+                Debug.WriteLine("Failed");
+            }
+        }
+
+        private void Something_Something(object sender, RoutedEventArgs e)
+        {
+            Blah.IsOpen = true;
         }
     }
 }

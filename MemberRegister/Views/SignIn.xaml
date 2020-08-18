@@ -4,22 +4,27 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MemberRegister.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
         <StackPanel Width="650" VerticalAlignment="Center" x:Name="Form">
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <TextBox HorizontalAlignment="Left" Width="450" Margin="0, 0, 50, 0" x:Name="Email" PlaceholderText="Email:"/>
-                <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" x:Name="EmailLabel" Foreground="Red" Opacity="0" Text="*Field cannot be empty"/>
+                <TextBox Style="{StaticResource Input}" x:Name="Email" PlaceholderText="Email:"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" x:Name="EmailLabel" Text="*Field cannot be empty"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0, 25, 0, 0">
-                <PasswordBox HorizontalAlignment="Left" Width="450" Margin="0, 0, 50, 0" x:Name="Password" PlaceholderText="Password:"/>
-                <TextBlock HorizontalAlignment="Left" Width="150" TextWrapping="Wrap" x:Name="PasswordLabel" Foreground="Red" Opacity="0" Text="*Field cannot be empty"/>
+                <PasswordBox Style="{StaticResource Input}" x:Name="Password" PlaceholderText="Password:"/>
+                <TextBlock Style="{StaticResource ErrorBlock}" x:Name="PasswordLabel" Text="*Field cannot be empty"/>
             </StackPanel>
+            <controls:TeachingTip x:Name="Blah"
+                                  Target="{x:Bind Password}"
+                                  Title="Something"
+                                  Subtitle="When the blood runs cold"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 25, 100, 0">
                 <Button Content="Save" Click="Sign_In"/>
+                <Button Content="Save" Click="Something_Something"/>
             </StackPanel>
         </StackPanel>
     </Grid>
