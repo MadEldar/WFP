@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="Microsoft_News.Views.NewsDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Microsoft_News.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:m="using:Microsoft_News.Models"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <GridView Width="800" ItemsSource="{x:Bind news}">
+        <Image Source="{x:Bind news.Thumbnail}" Width="800" Height="500"/>
+        <StackPanel Orientation="Horizontal" Height="Auto" Width="600">
+            <TextBlock Text="{x:Bind news.Title}" Height="Auto" Width="600"/>
+            <TextBlock Text="Author: " Height="20" Width="50"/>
+            <TextBlock Text="{x:Bind news.Author}" Height="20" Width="550" HorizontalAlignment="Left"/>
+        </StackPanel>
+    </GridView>
+</Page>
