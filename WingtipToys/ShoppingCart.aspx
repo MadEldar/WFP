@@ -37,4 +37,12 @@
         </strong>
     </div>
     <br />
+    <table>
+        <tr>
+            <td>
+                <asp:Button ID="UpdateBtn" runat="server" Text="Update" OnClick="UpdateBtn_Click"/>
+            </td>
+            <td></td>
+        </tr>
+    </table>
 </asp:Content>
