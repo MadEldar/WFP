@@ -1,0 +1,75 @@
+﻿@model Movie_On_Demand.Models.Movie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Director)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Director)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReleasedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReleasedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ratings)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Ratings.Average().ToString("#.#")
+        </dd>
+        <dt class="col-sm-2">
+            Give rating:
+        </dt>
+        <dd class="col-sm-10">
+            <form action="/movies/rate/@Model.ID" method="post">
+                <select name="Rating" class="form-control w-auto d-inline-block">
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+                <button type="submit" class="btn btn-primary">
+                    Rate
+                </button>
+            </form>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

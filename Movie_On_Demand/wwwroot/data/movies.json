@@ -1,0 +1,63 @@
+[
+  {
+    "ID": 1,
+    "Title": "Scott Pilgrim vs. the World",
+    "Status": 1,
+    "Director": "Edgar Wright",
+    "ReleasedDate": "2010-08-12T00:00:00Z",
+    "Genre": "Comedy",
+    "Ratings": [
+      4,
+      5,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "ID": 2,
+    "Title": "Sweeney Todd: The Demon Barber of Fleet Street",
+    "Status": 1,
+    "Director": "Tim Burton",
+    "ReleasedDate": "2008-01-25T00:00:00Z",
+    "Genre": "Musical",
+    "Ratings": [
+      4,
+      5,
+      5,
+      3,
+      4
+    ]
+  },
+  {
+    "ID": 3,
+    "Title": "Harry Potter and the Philosopher's Stone",
+    "Status": 1,
+    "Director": "Benjamin Cavell",
+    "ReleasedDate": "2001-11-29T00:00:00Z",
+    "Genre": "Fantasy",
+    "Ratings": [
+      2,
+      4,
+      5,
+      3,
+      4,
+      2
+    ]
+  },
+  {
+    "ID": 4,
+    "Title": "SEAL Team",
+    "Status": 1,
+    "Director": "Benjamin Cavell",
+    "ReleasedDate": "2009-02-15T00:00:00Z",
+    "Genre": "Action",
+    "Ratings": [
+      4,
+      5,
+      3,
+      4,
+      5
+    ]
+  }
+]
